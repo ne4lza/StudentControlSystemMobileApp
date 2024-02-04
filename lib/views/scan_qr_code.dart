@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:grock/grock.dart';
-import 'package:kolej_client/services/service.dart';
 import 'package:kolej_client/views/home.dart';
 import 'package:kolej_client/views/qr_result.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
@@ -15,8 +14,6 @@ class ScanQrCode extends StatefulWidget {
 class _ScanQrCodeState extends State<ScanQrCode> {
   @override
   void initState() {
-    Service service = Service();
-    service.userCall();
     super.initState();
   }
 

@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grock/grock.dart';
 import 'package:kolej_client/components/loading_popup.dart';
-import 'package:kolej_client/services/service.dart';
+import 'package:kolej_client/services/login_service.dart';
 import 'package:kolej_client/views/scan_qr_code.dart';
 
 class LoginRiverpod extends ChangeNotifier {
-  final service = Service();
+  final service = LoginService();
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
 
   void fetch() {
     loadingPopup();
-    service.loginCall(username: usernameController.text, password: passwordController.text).then((value) {
+    service.loginUser(username: usernameController.text, password: passwordController.text).then((value) {
       print(value);
       if (value != null) {
         Grock.back();

@@ -5,7 +5,7 @@ import 'package:kolej_client/components/side_bar.dart';
 import 'package:kolej_client/controllers/dependency.dart';
 import 'package:kolej_client/models/last_activities_model.dart';
 import 'package:kolej_client/riverpod/riverpod_manager.dart';
-import 'package:kolej_client/services/service.dart';
+import 'package:kolej_client/services/last_activities_service.dart';
 
 class LastActivities extends ConsumerStatefulWidget {
   // ignore: non_constant_identifier_names
@@ -14,20 +14,18 @@ class LastActivities extends ConsumerStatefulWidget {
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _LastActivitiesState();
 }
-Service service = Service();
 class _LastActivitiesState extends ConsumerState<LastActivities> {
   @override
   void initState() {
     DependencyInjection.init();
     ref.read(homeRiverpod).getData();
-    service.getLast();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    var state = ref.watch(homeRiverpod);
-    
+    var userState = ref.watch(homeRiverpod);
+    var service = LastActivitiesService();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -37,20 +35,20 @@ class _LastActivitiesState extends ConsumerState<LastActivities> {
         ),
       ),
       drawer: SideBar(
-        userAccountName: state.userData.userName ?? "",
-        userAccountEmail: state.userData.userSurName ?? "",
+        userAccountName: userState.userData.userName ?? "",
+        userAccountEmail: userState.userData.userSurName ?? "",
         userProfilePhoto: "",
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: state.isLoading
+        child: userState.isLoading
             ? Center(
                 child: CircularProgressIndicator(
                   color: Colors.blue,
                 ),
               )
             : FutureBuilder(
-  future: service.getLast(),
+  future: service.getLastActivities(),
   builder: (context, snapshot) {
     if (snapshot.connectionState == ConnectionState.waiting) {
       return Center(
@@ -79,10 +77,6 @@ class _LastActivitiesState extends ConsumerState<LastActivities> {
     }
   },
 )
-
-
-
-
       ),
     );
   }
