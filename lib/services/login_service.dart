@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:get_storage/get_storage.dart';
+import 'package:kolej_client/constants/constants.dart';
 import 'package:kolej_client/models/login_model.dart';
 import 'package:http/http.dart' as http;
 class LoginService {
@@ -9,7 +10,7 @@ class LoginService {
       {required String username, required String password}) async {
     final tokenBox = GetStorage();
     final userNameBox = GetStorage();
-    final String url = "http://192.168.1.6:8070/api/Giris/Token";
+    final String url = "${Constants.testBaseUrl}Giris/Token";
     Map<String, dynamic> jsonModel = {"UserName": username, "Password": password};
     final response = await http.post(Uri.parse(url),
     headers: {'Content-Type': 'application/json'}, 
