@@ -1,0 +1,28 @@
+{
+    "Login":{
+        "Baslik":"Student Control Systems",
+        "Kullanici_adi_place_holder":"Your User Name",
+        "Sifre_place_holder":"Your password",
+        "login_button":"Login",
+        "translate_button":"Türkçe Olarak Devam Et"
+        
+
+    },
+    "ScanQr":{
+        "scan_qr_screen_title":"You Read the QR Code to Make a Transaction",
+        "scan_qr_screen_button":"Cancel"
+    },
+    "Home":{
+        "page_title":"My Profile"
+    },
+    "SideBar":{
+        "profilim":"My Profile",
+        "qr_kodu_okut":"Scan Qr Code",
+        "son_islemlerim":"My Recent Transactions",
+        "ayarlar":"Settings",
+        "cikis_yap":"Log out"
+    },
+    "Settings":{
+        "dil":"Preferred Language"
+    }
+}

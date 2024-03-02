@@ -29,6 +29,9 @@ class LoginService {
       print(tokenBox.read("userName"));
       return result;
     }
+    else{
+      print(response.body);
+    }
     return null;
   }
 }

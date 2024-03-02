@@ -1,0 +1,28 @@
+{
+    "Login":{
+        "Baslik":"Öğrenci Kontrol Sistemleri",
+        "Kullanici_adi_place_holder":"Kullanıcı Adınız",
+        "Sifre_place_holder":"Şifreniz",
+        "login_button":"Giriş Yap",
+        "translate_button":"Continue in English"
+        
+
+    },
+    "ScanQr":{
+        "scan_qr_screen_title":"İşlem Yapmak İçin QR Kodu Oktunuz",
+        "scan_qr_screen_button":"Vazgeç"
+    },
+    "Home":{
+        "page_title":"Profilim"
+    },
+    "SideBar":{
+        "profilim":"Profilim",
+        "qr_kodu_okut":"Qr Kodu Okut",
+        "son_islemlerim":"Son İşlemlerim",
+        "ayarlar":"Ayarlar",
+        "cikis_yap":"Çıkış Yap"
+    },
+    "Settings":{
+        "dil":"Tercih Edilen Dil"
+    }
+}

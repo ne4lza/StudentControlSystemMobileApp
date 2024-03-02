@@ -37,7 +37,6 @@ class _LastActivitiesState extends ConsumerState<LastActivities> {
       drawer: SideBar(
         userAccountName: userState.userData.userName ?? "",
         userAccountEmail: userState.userData.userSurName ?? "",
-        userProfilePhoto: "",
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
